@@ -24,19 +24,20 @@ interface HeaderProps {
 
 export default function Header({ onToggleSidebar, activePanel }: HeaderProps) {
   return (
-    <div className="flex h-14 items-center justify-between border-b border-neutral-800 bg-black px-4">
+    <div className="flex h-14 items-center justify-between border-b border-neutral-800 bg-white px-4">
       <div className="flex items-center gap-2">
         <Image
-          src="/nvidia-logo.svg"
+          // src="/nvidia-logo.svg"
+          src="/onedata logo.jpeg"
           alt="NVIDIA Logo"
           width={128}
-          height={24}
+          height={15}
         />
-        <span className="text-lg font-semibold text-white">RAG Blueprint</span>
+        <span className="text-lg font-semibold text-black">RAG Blueprint</span>
       </div>
 
       <div className="absolute left-1/2 -translate-x-1/2 transform"></div>
-      <span className="rounded-lg border border-neutral-800 bg-neutral-900 px-8 py-1 text-sm text-neutral-100">
+      <span className="rounded-lg border border-[var(--nv-green)] bg-[var(--nv-green)] px-8 py-1 text-sm text-neutral-100">
         {process.env.NEXT_PUBLIC_MODEL_NAME || "Model not found"}
       </span>
 
@@ -44,8 +45,8 @@ export default function Header({ onToggleSidebar, activePanel }: HeaderProps) {
         <button
           onClick={() => onToggleSidebar("citations")}
           className={`flex items-center gap-2 text-sm ${
-            activePanel === "citations" ? "text-white" : "text-gray-400"
-          } transition-colors hover:text-white`}
+            activePanel === "citations" ? "text-[var(--nv-green)]" : "text-black"
+          } transition-colors hover:text-gray-600`}
         >
           <Image
             src="/citations.svg"
@@ -58,8 +59,8 @@ export default function Header({ onToggleSidebar, activePanel }: HeaderProps) {
         <button
           onClick={() => onToggleSidebar("settings")}
           className={`flex items-center gap-2 text-sm ${
-            activePanel === "settings" ? "text-white" : "text-gray-400"
-          } transition-colors hover:text-white`}
+            activePanel === "settings" ? "text-[var(--nv-green)]" : "text-black"
+          } transition-colors hover:text-gray-600`}
         >
           <Image
             src="/settings.svg"

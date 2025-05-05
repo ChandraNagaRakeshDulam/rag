@@ -91,14 +91,14 @@ export default function CollectionItem({
 
   return (
     <div
-      className="group relative flex cursor-pointer items-center justify-between border-b border-neutral-800 px-3 py-2 hover:bg-neutral-900"
+      className="group relative flex cursor-pointer items-center justify-between border-b border-white px-3 py-2 hover:bg-white"
       onClick={onSelect}
     >
       <div className="flex min-w-0 flex-1 items-center gap-2 overflow-hidden">
         <div
-          className={`mr-2 flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full border ${isSelected ? "border-[var(--nv-green)] bg-[var(--nv-green)]" : "border-gray-600"}`}
+          className={`mr-2 flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full border ${isSelected ? "border-[var(--nv-green)] bg-[var(--nv-green)]" : "border-white"}`}
         >
-          {isSelected && <div className="h-2 w-2 rounded-full bg-black" />}
+          {isSelected && <div className="h-2 w-2 rounded-full bg-white" />}
         </div>
         <Image
           src="/collection.svg"
@@ -117,7 +117,7 @@ export default function CollectionItem({
 
       <button
         onClick={handleDropdownClick}
-        className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full text-gray-400 hover:bg-neutral-800 hover:text-white"
+        className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full text-gray-400 hover:bg-white hover:text-white"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -140,7 +140,7 @@ export default function CollectionItem({
             right: `${dropdownPosition.right}px`,
           }}
         >
-          <div className="rounded-md border border-neutral-800 bg-neutral-900 shadow-lg">
+          <div className="rounded-md border border-neutral-800 bg-white shadow-lg">
             <button
               onClick={handleAddSource}
               className="flex w-full items-center px-4 py-2 text-sm text-white hover:bg-neutral-800"

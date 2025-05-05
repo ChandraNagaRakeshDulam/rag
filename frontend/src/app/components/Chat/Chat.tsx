@@ -192,7 +192,7 @@ export default function Chat() {
   };
 
   return (
-    <div className="flex h-[calc(100vh-56px)] bg-[#121212]">
+    <div className="flex h-[calc(100vh-56px)] bg-[#FFFFFF]">
       <Collections />
       <div
         className={`flex flex-1 transition-all duration-300 ${
@@ -214,8 +214,8 @@ export default function Chat() {
                     <div
                       className={`max-w-2xl rounded-lg p-4 ${
                         msg.role === "user"
-                          ? "bg-neutral-800 text-white"
-                          : "bg-neutral-800 text-white"
+                          ? "bg-white text-black"
+                          : "bg-white text-black"
                       }`}
                     >
                       <div className="text-sm">
@@ -226,7 +226,7 @@ export default function Chat() {
                             : ""}
                       </div>
                       {msg.citations && (
-                        <div className="mt-2 text-xs text-gray-400">
+                        <div className="mt-2 text-xs text-black">
                           <button
                             onClick={() =>
                               handleToggleSidebar("citations", msg.citations)
@@ -244,7 +244,7 @@ export default function Chat() {
               </div>
             </div>
 
-            <div className="flex-shrink-0 border-t border-neutral-800">
+            <div className="flex-shrink-0 border-t border-black">
               <MessageInput
                 message={message}
                 setMessage={setMessage}

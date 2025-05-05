@@ -40,32 +40,32 @@ const renderCitationContent = (citation: Citation) => {
 
     case "text":
     default:
-      return <p className="mb-4 text-sm text-gray-400">{citation.text}</p>;
+      return <p className="mb-4 text-sm text-black">{citation.text}</p>;
   }
 };
 
 export default function Citations({ citations = [] }: CitationsProps) {
   if (!citations || citations.length === 0) {
     return (
-      <div className="p-4 text-center text-gray-400">
+      <div className="p-4 text-center text-black">
         No citations available for this response.
       </div>
     );
   }
 
   return (
-    <div className="space-y-6 text-gray-400">
+    <div className="space-y-6 text-black">
       {citations.map((citation, index) => (
         <div
           key={index}
-          className="max-h-72 overflow-y-auto rounded-lg border border-neutral-800 p-4"
+          className="max-h-72 overflow-y-auto rounded-lg border border-white p-4"
         >
           <div className="mb-2 flex items-center justify-between">
             <h3 className="text-sm font-medium">Source {index + 1}</h3>
           </div>
           {renderCitationContent(citation)}
           <div className="flex items-center gap-2">
-            <span className="text-xs text-gray-500">Source:</span>
+            <span className="text-xs text-black">Source:</span>
             <span className="text-xs text-gray-400">{citation.source}</span>
           </div>
         </div>

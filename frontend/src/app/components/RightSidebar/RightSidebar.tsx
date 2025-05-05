@@ -37,18 +37,18 @@ export default function RightSidebar() {
 
   return (
     <div
-      className={`fixed bottom-0 right-0 top-14 w-[400px] transform border-l border-neutral-800 bg-black transition-transform duration-300 ease-in-out ${
+      className={`fixed bottom-0 right-0 top-14 w-[400px] transform border-l border-neutral-800 bg-white transition-transform duration-300 ease-in-out ${
         !!activePanel ? "translate-x-0" : "translate-x-full"
       }`}
     >
       <div className="flex h-full flex-col">
         <div className="flex items-center justify-between border-b border-neutral-800 p-4">
-          <h2 className="text-xl font-semibold text-white">
+          <h2 className="text-xl font-semibold text-black">
             {displayPanel === "citations" ? "Citations" : "Settings"}
           </h2>
           <button
             onClick={closeSidebar}
-            className="text-gray-400 transition-colors hover:text-white"
+            className="text-gray-400 transition-colors hover:text-black"
             aria-label="Close sidebar"
           >
             ×

@@ -173,7 +173,7 @@ export default function AddSourceModal({
         onChange={(e) => {
           setSelectedCollection(e.target.value);
         }}
-        className="w-full rounded-md bg-neutral-800 px-4 py-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-[var(--nv-green)]"
+        className="w-full rounded-md bg-white px-4 py-2 text-sm text-black focus:outline-none focus:ring-2 focus:ring-[var(--nv-green)]"
       >
         {collections.map((collection) => (
           <option

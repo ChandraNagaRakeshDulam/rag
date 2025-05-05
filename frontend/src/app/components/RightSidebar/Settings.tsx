@@ -74,11 +74,11 @@ export default function Settings() {
   }, [vdbTopK, rerankerTopK]);
 
   return (
-    <div className="text-white">
+    <div className="text-black">
       <div className="mb-8">
         <button
           onClick={() => toggleSection("ragConfig")}
-          className="mb-4 flex w-full items-center justify-between text-sm font-medium hover:text-gray-300"
+          className="mb-4 flex w-full items-center justify-between text-sm font-medium hover:text-gray-600"
         >
           <span>RAG Configuration Parameters</span>
           <span className="transform transition-transform duration-200">
@@ -98,7 +98,7 @@ export default function Settings() {
                 type="number"
                 value={temperature}
                 onChange={(e) => setTemperature(Number(e.target.value))}
-                className="w-16 rounded bg-neutral-800 px-2 py-1 text-sm"
+                className="w-16 rounded border border-[var(--nv-green)] bg-white px-2 py-1 text-sm"
                 step="0.1"
                 min="0"
                 max="1"
@@ -113,7 +113,7 @@ export default function Settings() {
               min="0"
               max="1"
             />
-            <p className="mt-1 text-xs text-gray-400">
+            <p className="mt-1 text-xs text-gray">
               Controls the creativity of the model. Higher values enable more
               creative outputs, suitable for tasks such as creative writing. A
               value within the [0.5, 0.8] range is a good starting point for
@@ -128,7 +128,7 @@ export default function Settings() {
                 type="number"
                 value={topP}
                 onChange={(e) => setTopP(Number(e.target.value))}
-                className="w-16 rounded bg-neutral-800 px-2 py-1 text-sm"
+                className="w-16 rounded border border-[var(--nv-green)] bg-white px-2 py-1 text-sm"
                 step="0.1"
                 min="0"
                 max="1"
@@ -143,7 +143,7 @@ export default function Settings() {
               min="0"
               max="1"
             />
-            <p className="mt-1 text-xs text-gray-400">
+            <p className="mt-1 text-xs text-gray">
               The number of times the entire dataset is propagated through the
               network during training.
             </p>
@@ -156,14 +156,14 @@ export default function Settings() {
                 type="number"
                 value={vdbTopK}
                 onChange={(e) => handleVdbTopKChange(e.target.value)}
-                className={`w-24 rounded bg-neutral-800 px-3 py-2 text-sm ${
+                className={`w-24 rounded border border-[var(--nv-green)] bg-white px-3 py-2 text-sm ${
                   vdbTopK < rerankerTopK ? "border border-red-500" : ""
                 }`}
                 min="1"
                 aria-label="Vector Database Top K"
               />
             </div>
-            <p className="mt-1 text-xs text-gray-400">
+            <p className="mt-1 text-xs text-gray">
               The number of top-ranked vectors retrieved from a vector database
               (VDB) during inference. Must be greater than or equal to Reranker
               Top K.
@@ -184,14 +184,14 @@ export default function Settings() {
                 type="number"
                 value={rerankerTopK}
                 onChange={(e) => handleRerankerTopKChange(e.target.value)}
-                className={`w-24 rounded bg-neutral-800 px-3 py-2 text-sm ${
+                className={`w-24 rounded border border-[var(--nv-green)] bg-white px-3 py-2 text-sm ${
                   rerankerTopK > vdbTopK ? "border border-red-500" : ""
                 }`}
                 min="1"
                 aria-label="Reranker Top K"
               />
             </div>
-            <p className="mt-1 text-xs text-gray-400">
+            <p className="mt-1 text-xs text-gray">
               The number of top-ranked documents or knowledge chunks retrieved
               from a retriever model before passing them to the AI for response
               generation. Must be less than or equal to VDB Top K.
@@ -210,7 +210,7 @@ export default function Settings() {
       <div>
         <button
           onClick={() => toggleSection("outputPrefs")}
-          className="mb-4 flex w-full items-center justify-between text-sm font-medium hover:text-gray-300"
+          className="mb-4 flex w-full items-center justify-between text-sm font-medium hover:text-gray-600"
         >
           <span>Output Preferences</span>
           <span className="transform transition-transform duration-200">
@@ -225,7 +225,7 @@ export default function Settings() {
           <div className="flex items-center justify-between">
             <div>
               <p className="text-sm">Guardrails</p>
-              <p className="text-xs text-gray-400">
+              <p className="text-xs text-gray">
                 Apply guardrails to every response
               </p>
             </div>
@@ -244,13 +244,13 @@ export default function Settings() {
           <div className="flex items-center justify-between">
             <div>
               <p className="text-sm">Citations</p>
-              <p className="text-xs text-gray-400">
+              <p className="text-xs text-gray">
                 Include citations from sources
               </p>
             </div>
             <button
               onClick={() => setIncludeCitations(!includeCitations)}
-              className={`h-6 w-11 rounded-full transition-colors ${includeCitations ? "bg-[var(--nv-green)]" : "bg-neutral-800"} relative`}
+              className={`h-6 w-11 rounded-full transition-colors ${includeCitations ? "bg-[var(--nv-green)]" : "bg-black"} relative`}
             >
               <span
                 className={`block h-4 w-4 rounded-full bg-white transition-transform ${

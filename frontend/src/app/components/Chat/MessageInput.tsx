@@ -46,15 +46,15 @@ export default function MessageInput({
   };
 
   return (
-    <div className="border-t border-neutral-800 p-4">
+    <div className="border-t border-gray-300 p-4">
       <div className="mx-auto max-w-3xl">
-        <div className="overflow-hidden rounded-lg bg-neutral-800">
+        <div className="overflow-hidden rounded-lg border border-[var(--nv-green)]">
           <textarea
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             onKeyDown={handleKeyDown}
             placeholder="Ask your question"
-            className="scrollbar-hide max-h-[200px] min-h-[44px] w-full resize-none bg-neutral-800 px-4 py-3 text-white focus:outline-none"
+            className="scrollbar-hide max-h-[200px] min-h-[44px] w-full resize-none bg-white px-4 py-3 text-black focus:outline-none"
             style={{ height: "auto" }}
             onInput={(e) => {
               const target = e.target as HTMLTextAreaElement;
@@ -65,14 +65,14 @@ export default function MessageInput({
 
           <div className="flex items-center justify-between px-4 py-3">
             <button
-              className="text-sm text-neutral-100 transition-colors hover:text-white"
+              className="text-sm text-black transition-colors hover:text-gray-600"
               onClick={onReset}
             >
               Reset Chat
             </button>
 
             {selectedCollection ? (
-              <div className="rounded-full bg-neutral-100 px-4 py-1 text-sm text-black">
+              <div className="rounded-full bg-white px-4 py-1 text-sm text-black">
                 <div className="flex items-center">
                   <Image
                     src="/collection.svg"
@@ -85,14 +85,14 @@ export default function MessageInput({
                 </div>
               </div>
             ) : (
-              <div className="rounded-full border border-white px-4 py-1 text-sm text-white">
+              <div className="rounded-full border border-black px-4 py-1 text-sm text-black">
                 <div className="flex items-center">
                   <Image
                     src="/collection.svg"
                     alt="Upload files"
                     width={24}
                     height={24}
-                    className="mr-1 invert"
+                    className="mr-1"
                   />
                   No Collection
                 </div>
@@ -103,17 +103,17 @@ export default function MessageInput({
               disabled={!message.trim() && !isStreaming}
               className={`rounded-full px-4 py-1.5 text-sm font-medium transition-colors ${
                 isStreaming
-                  ? "bg-neutral-600 text-white hover:brightness-90"
+                  ? "bg-white text-black hover:brightness-90"
                   : !message.trim()
-                    ? "bg-neutral-700 text-neutral-400"
-                    : "bg-[var(--nv-green)] text-white hover:brightness-90"
+                    ? "bg-white text-neutral-600"
+                    : "bg-[var(--nv-green)] text-black hover:brightness-90"
               }`}
             >
               {isStreaming ? "Stop" : "Send"}
             </button>
           </div>
         </div>
-        <p className="mt-2 text-center text-xs text-gray-500">
+        <p className="mt-2 text-center text-xs text-black">
           Model responses may be inaccurate or incomplete. Verify critical
           information before use.
         </p>

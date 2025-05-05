@@ -178,8 +178,8 @@ export default function Collections() {
 
   // Render Helpers
   const renderHeader = () => (
-    <div className="mb-4 flex items-center justify-between">
-      <div className="flex items-center gap-2">
+    <div className="mb-4 bg-white flex items-center justify-between">
+      <div className="bg-white flex items-center gap-2">
         <h2 className="text-sm font-medium">
           {showSourceItems ? (
             <button
@@ -194,7 +194,7 @@ export default function Collections() {
         </h2>
         {showSourceItems && selectedCollection && (
           <>
-            <span className="text-gray-500">/</span>
+            <span className="text-black">/</span>
             <span className="text-sm font-medium text-[var(--nv-green)]">
               {selectedCollection}
             </span>
@@ -212,7 +212,7 @@ export default function Collections() {
     if (showSourceItems && selectedCollection) return <DocumentsList />;
     return (
       <div className="collections-container relative">
-        <div className="max-h-[calc(100vh-260px)] overflow-y-auto pr-2">
+        <div className="max-h-[calc(100vh-260px)] bg-white overflow-y-auto pr-2">
           <CollectionsList />
         </div>
       </div>
@@ -221,7 +221,7 @@ export default function Collections() {
 
   // Render Components
   const LoadingState = ({ message }: { message: string }) => (
-    <div className="flex h-[200px] items-center justify-center">
+    <div className="flex h-[200px] bg-white items-center justify-center">
       <div className="flex flex-col items-center gap-4">
         <div className="h-6 w-6 animate-spin rounded-full border-2 border-[var(--nv-green)] border-t-transparent" />
         <p className="text-sm text-gray-400">{message}</p>
@@ -230,7 +230,7 @@ export default function Collections() {
   );
 
   const ErrorState = ({ error }: { error: string }) => (
-    <div className="flex h-[200px] flex-col items-center justify-center text-center">
+    <div className="flex h-[200px] bg-white flex-col items-center justify-center text-center">
       <div className="mb-4">
         <Image
           src="/error.svg"
@@ -328,14 +328,14 @@ export default function Collections() {
   );
 
   return (
-    <div className="flex w-[320px] flex-col bg-black p-4 text-white">
+    <div className="flex w-[320px] flex-col bg-white p-4 text-black border-r border-r-black">
       <div className="relative mb-6">
         <input
           type="text"
           placeholder="Search collections"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className="w-full rounded-md bg-neutral-900 px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--nv-green)]"
+          className="w-full rounded-md border border-gray-300 bg-white px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--nv-green)]"
           disabled={isLoadingCollections}
         />
       </div>
